@@ -1,12 +1,12 @@
 @ECHO OFF
-TITLE GoodbyeDPI - Install Service (Vietnam Steam Only)
+TITLE GoodbyeDPI - Install Windows Service (Steam Only)
 PUSHD "%~dp0"
 set _arch=x86
 IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" (set _arch=x86_64)
 IF DEFINED PROCESSOR_ARCHITEW6432 (set _arch=x86_64)
 
 echo =========================================================================
-echo    Cai dat GoodbyeDPI thanh Windows Service (Che do: Chi Steam)
+echo    Cai dat GoodbyeDPI thanh Windows Service (Chi rieng Steam)
 echo =========================================================================
 echo  Bat buoc chay file nay voi quyen Administrator (Run as Administrator).
 echo  Service se tu dong chay ngam moi khi bat may tinh, khong can mo CMD.

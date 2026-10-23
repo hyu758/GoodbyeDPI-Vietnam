@@ -24,20 +24,11 @@ Phiên bản tùy biến và tối ưu hóa của tiện ích **GoodbyeDPI** dà
 
 Tải thư mục về máy tính (hoặc tải file ZIP từ mục **Releases**), nhấp chuột phải vào file script tương ứng và chọn **Run as administrator**:
 
-### 🇻🇳 1. Dành cho người dùng tại Việt Nam (Bổ sung mới)
-| File Script | Mục đích | Mô tả |
+| File Script | Mục đích sử dụng | Mô tả chi tiết |
 | :--- | :--- | :--- |
-| **`3_vietnam_dnsredir.cmd`** | **Mở chặn web VN + Steam (Khuyên dùng)** | Chặn lọc theo `vietnam-blacklist.txt` + tự động chuyển hướng sang Cloudflare DNS `1.1.1.1` (ping ~20ms). |
-| **`3_vietnam_steam.cmd`** | **Chỉ mở chặn riêng Steam** | Chỉ can thiệp vào các kết nối của Steam (`vietnam-steam.txt`), giữ nguyên 100% traffic khác. |
-| **`3_vietnam.cmd`** | **Mở chặn theo blacklist VN (Không đổi DNS)** | Dùng khi máy bạn đã tự cài đặt DNS 1.1.1.1 hoặc 8.8.8.8 trên Windows. |
-| **`3_vietnam_all_plus_russia.cmd`** | **Bản gốc + Bổ sung Việt Nam** | Nạp đồng thời **154.000+ domain gốc** (`russia-blacklist.txt`), YouTube VÀ danh sách Việt Nam. |
-
-### 🌍 2. Scripts chuẩn từ bản gốc GoodbyeDPI
-| File Script | Mục đích | Mô tả |
-| :--- | :--- | :--- |
-| **`2_any_country_dnsredir.cmd`** | **Bản gốc: Mở chặn toàn cầu + DNS** | Chạy chế độ vượt DPI cho **mọi website** không cần blacklist + DNS Yandex. |
-| **`2_any_country.cmd`** | **Bản gốc: Mở chặn toàn cầu** | Vượt DPI cho mọi website, giữ nguyên DNS máy tính. |
-| **`1_russia_*.cmd`** | **Bản gốc: Danh sách Nga / YouTube** | Các cấu hình đặc thù của bản gốc GoodbyeDPI. |
+| **`1_all_websites.cmd`** | **Mở chặn TẤT CẢ website (Khuyên dùng)** | Không cần blacklist, tự động vượt DPI cho mọi website trên thế giới (Steam, Medium, BBC...) + Cloudflare DNS (`1.1.1.1`). |
+| **`2_vietnam_all.cmd`** | **Mở chặn theo Blacklist Việt Nam** | Chỉ can thiệp các dịch vụ bị chặn tại VN theo danh sách `vietnam-blacklist.txt`. |
+| **`3_steam_only.cmd`** | **Chỉ mở chặn riêng Steam** | Chỉ can thiệp duy nhất lưu lượng Steam/Valve (`vietnam-steam.txt`), giữ nguyên 100% traffic khác (tối ưu nhất cho game thủ). |
 
 > [!IMPORTANT]
 > - Các file `.cmd` trên **bắt buộc phải chạy bằng quyền Administrator** (`Run as administrator`) vì chương trình cần nạp driver mạng `WinDivert`.
@@ -50,8 +41,8 @@ Tải thư mục về máy tính (hoặc tải file ZIP từ mục **Releases**)
 Nếu bạn không muốn phải mở cửa sổ dòng lệnh mỗi lần bật máy tính:
 
 1. Chọn chế độ cài đặt:
-   - **`service_install_vietnam_dnsredir.cmd`**: Chạy ngầm cho toàn bộ website bị chặn tại Việt Nam + Steam + Cloudflare DNS.
-   - **`service_install_vietnam_steam.cmd`**: Chạy ngầm chỉ riêng cho ứng dụng Steam.
+   - **`service_install_all_websites.cmd`**: Chạy ngầm mở chặn tất cả website trên thế giới + Cloudflare DNS.
+   - **`service_install_steam_only.cmd`**: Chạy ngầm chỉ riêng cho ứng dụng Steam.
 2. Nhấp chuột phải vào file tương ứng ➔ chọn **Run as administrator**.
 3. **Để gỡ bỏ**: Nhấp chuột phải vào **`service_remove.cmd`** ➔ chọn **Run as administrator**.
 
@@ -61,28 +52,20 @@ Nếu bạn không muốn phải mở cửa sổ dòng lệnh mỗi lần bật 
 
 ```text
 GoodbyeDPI/
-├── 2_any_country.cmd                     # [Gốc] Mở chặn tất cả mọi website
-├── 2_any_country_dnsredir.cmd            # [Gốc] Mở chặn tất cả + DNS Redirection
-├── 1_russia_*.cmd                        # [Gốc] Các script dành riêng cho Nga/YouTube
+├── 1_all_websites.cmd                  # Mở chặn tất cả mọi website + Cloudflare DNS (1.1.1.1)
+├── 2_vietnam_all.cmd                   # Mở chặn danh sách web bị chặn ở VN (Steam, Media...)
+├── 3_steam_only.cmd                    # Chỉ mở chặn riêng Steam
 │
-├── 3_vietnam_dnsredir.cmd                # [Bổ sung VN] Mở chặn website VN + Steam + Cloudflare DNS
-├── 3_vietnam_steam.cmd                   # [Bổ sung VN] Chỉ mở chặn riêng Steam + Cloudflare DNS
-├── 3_vietnam.cmd                         # [Bổ sung VN] Mở chặn website VN (không can thiệp DNS)
-├── 3_vietnam_all_plus_russia.cmd         # [Bổ sung VN] Nạp cả 154k domain gốc + domain VN
+├── service_install_all_websites.cmd    # Cài Windows Service chạy ngầm (Tất cả web)
+├── service_install_steam_only.cmd      # Cài Windows Service chạy ngầm (Chỉ Steam)
+├── service_remove.cmd                  # Gỡ bỏ Windows Service và driver
 │
-├── service_install_vietnam_dnsredir.cmd  # Cài Windows Service chạy ngầm (Việt Nam)
-├── service_install_vietnam_steam.cmd     # Cài Windows Service chạy ngầm (Chỉ Steam)
-├── service_install_russia_*.cmd          # [Gốc] Cài Windows Service theo cấu hình gốc
-├── service_remove.cmd                    # Gỡ bỏ Windows Service và driver
+├── vietnam-blacklist.txt               # Danh sách domain Steam, Media, Dev bị chặn ở VN
+├── vietnam-steam.txt                   # Danh sách domain riêng cho Steam & Valve
 │
-├── vietnam-blacklist.txt                 # [Bổ sung VN] Danh sách domain Steam, Media, Dev bị chặn ở VN
-├── vietnam-steam.txt                     # [Bổ sung VN] Danh sách riêng cho Steam & Valve
-├── russia-blacklist.txt                  # [Gốc] 154.000+ domain quốc tế bị chặn
-├── russia-youtube.txt                    # [Gốc] Danh sách domain YouTube
-│
-├── x86/                                  # File thực thi cho Windows 32-bit (v0.2.3rc3)
-├── x86_64/                               # File thực thi cho Windows 64-bit (v0.2.3rc3)
-└── src/                                  # Toàn bộ mã nguồn C & Makefile của dự án
+├── x86/                                # File thực thi cho Windows 32-bit (v0.2.3rc3)
+├── x86_64/                             # File thực thi cho Windows 64-bit (v0.2.3rc3)
+└── src/                                # Toàn bộ mã nguồn C & Makefile của dự án
 ```
 
 ---
