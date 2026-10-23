@@ -5,6 +5,7 @@
 # Temporary / Editor files
 *.tmp
 *.log
+*.zip
 Thumbs.db
 [Dd]esktop.ini
 .vscode/
