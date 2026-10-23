@@ -4,19 +4,19 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com)
 
-Phiên bản tùy biến và tối ưu hóa của tiện ích **GoodbyeDPI** dành riêng cho người dùng Internet tại **Việt Nam**. Giúp vượt qua hệ thống kiểm duyệt gói tin sâu (**Deep Packet Inspection - DPI**) và **Đầu độc DNS (DNS Poisoning)** của các nhà mạng (Viettel, VNPT, FPT, CMC, MobiFone...).
+Công cụ tiện ích mã nguồn mở giúp hỗ trợ truy cập các trang web và dịch vụ trực tuyến bị hạn chế kết nối tại **Việt Nam**.
 
-Đặc biệt giải quyết triệt để tình trạng **bị chặn truy cập Steam** (Store, Community, Friend/Chat) và các website công nghệ/tin tức quốc tế (**Medium, BBC, ArtStation...**) **mà không làm tăng Ping, không tốn băng thông, không cần cài đặt VPN.**
+Đặc biệt hỗ trợ truy cập mượt mà vào **Steam** (Cửa hàng Store, Cộng đồng Community, Tải game, Chat bạn bè) và các website công nghệ/tin tức quốc tế (**Medium, BBC, ArtStation...**) **mà không làm tăng Ping, không giảm tốc độ mạng, không cần cài đặt VPN.**
 
 ---
 
 ## ⚡ Tính năng nổi bật
 
-- 🎮 **Mở khóa Steam 100%**: Vào mượt mà Store, Community, tải game, chat bạn bè trên cả trình duyệt và ứng dụng Steam Client.
-- 🚀 **Không giật lag / Không tăng Ping**: Hoạt động cục bộ trên máy tính bằng cách phân mảnh gói tin TCP (TCP segmentation/reverse fragmentation) để DPI không nhận diện được SNI. Không đẩy traffic qua proxy trung gian.
-- 🛡️ **Tích hợp Cloudflare DNS siêu tốc**: Tự động chuyển hướng UDP port 53 sang `1.1.1.1` (ping ~20ms tại Việt Nam) giúp chống giả mạo DNS của ISP.
-- 🎯 **Chế độ Blacklist thông minh**: Tùy chọn chỉ can thiệp vào các kết nối của Steam/trang bị chặn, giữ nguyên 100% kết nối của các game khác (Valorant, LMHT, PUBG, CS2...) và các tác vụ thường ngày.
-- 🔄 **Hỗ trợ Windows Service**: Cài đặt chạy ngầm tự khởi động cùng Windows chỉ với 1 cú click, không cần giữ cửa sổ CMD.
+- 🎮 **Kết nối Steam mượt mà**: Vào dễ dàng Store, Community, tải game, chat bạn bè trên cả trình duyệt và ứng dụng Steam Client.
+- 🚀 **Không giật lag / Không tăng Ping**: Hoạt động trực tiếp trên máy tính bằng cách chia nhỏ gói tin TCP, không truyền dữ liệu qua máy chủ trung gian nên giữ nguyên 100% tốc độ cáp quang.
+- 🛡️ **Tích hợp Cloudflare DNS siêu tốc**: Tự động kết nối qua DNS `1.1.1.1` (độ trễ cực thấp ~20ms) giúp việc tìm kiếm địa chỉ trang web luôn nhanh chóng và chính xác.
+- 🎯 **Chế độ chọn lọc thông minh**: Tùy chọn chỉ can thiệp vào các kết nối Steam hoặc các trang cần truy cập, giữ nguyên toàn bộ lưu lượng của các game và ứng dụng khác (Valorant, LMHT, PUBG, CS2...).
+- 🔄 **Hỗ trợ Windows Service**: Cài đặt chạy ngầm tự khởi động cùng máy tính chỉ với 1 cú click, không cần giữ cửa sổ dòng lệnh.
 
 ---
 
@@ -26,12 +26,12 @@ Tải thư mục về máy tính (hoặc tải file ZIP từ mục **Releases**)
 
 | File Script | Mục đích sử dụng | Mô tả chi tiết |
 | :--- | :--- | :--- |
-| **`1_all_websites.cmd`** | **Mở chặn TẤT CẢ website (Khuyên dùng)** | Không cần blacklist, tự động vượt DPI cho mọi website trên thế giới (Steam, Medium, BBC...) + Cloudflare DNS (`1.1.1.1`). |
-| **`2_vietnam_all.cmd`** | **Mở chặn theo Blacklist Việt Nam** | Chỉ can thiệp các dịch vụ bị chặn tại VN theo danh sách `vietnam-blacklist.txt`. |
-| **`3_steam_only.cmd`** | **Chỉ mở chặn riêng Steam** | Chỉ can thiệp duy nhất lưu lượng Steam/Valve (`vietnam-steam.txt`), giữ nguyên 100% traffic khác (tối ưu nhất cho game thủ). |
+| **`1_all_websites.cmd`** | **Mở kết nối TẤT CẢ website (Khuyên dùng)** | Tự động hỗ trợ kết nối cho mọi website trên thế giới (Steam, Medium, BBC...) + Cloudflare DNS (`1.1.1.1`). |
+| **`2_vietnam_all.cmd`** | **Mở kết nối theo danh sách Việt Nam** | Chỉ áp dụng cho các trang web có trong file `vietnam-blacklist.txt`. |
+| **`3_steam_only.cmd`** | **Chỉ áp dụng riêng cho Steam** | Chỉ hỗ trợ duy nhất lưu lượng Steam/Valve (`vietnam-steam.txt`), giữ nguyên 100% traffic khác (tối ưu nhất cho game thủ). |
 
 > [!IMPORTANT]
-> - Các file `.cmd` trên **bắt buộc phải chạy bằng quyền Administrator** (`Run as administrator`) vì chương trình cần nạp driver mạng `WinDivert`.
+> - Các file `.cmd` trên **cần chạy bằng quyền Administrator** (`Run as administrator`) vì chương trình cần nạp driver mạng `WinDivert`.
 > - Khi dùng các file này, hãy giữ cửa sổ dòng lệnh mở. Nếu muốn chạy ẩn hoàn toàn, xem mục Cài đặt chạy ngầm bên dưới.
 
 ---
@@ -41,7 +41,7 @@ Tải thư mục về máy tính (hoặc tải file ZIP từ mục **Releases**)
 Nếu bạn không muốn phải mở cửa sổ dòng lệnh mỗi lần bật máy tính:
 
 1. Chọn chế độ cài đặt:
-   - **`service_install_all_websites.cmd`**: Chạy ngầm mở chặn tất cả website trên thế giới + Cloudflare DNS.
+   - **`service_install_all_websites.cmd`**: Chạy ngầm cho tất cả website + Cloudflare DNS.
    - **`service_install_steam_only.cmd`**: Chạy ngầm chỉ riêng cho ứng dụng Steam.
 2. Nhấp chuột phải vào file tương ứng ➔ chọn **Run as administrator**.
 3. **Để gỡ bỏ**: Nhấp chuột phải vào **`service_remove.cmd`** ➔ chọn **Run as administrator**.
@@ -52,15 +52,15 @@ Nếu bạn không muốn phải mở cửa sổ dòng lệnh mỗi lần bật 
 
 ```text
 GoodbyeDPI/
-├── 1_all_websites.cmd                  # Mở chặn tất cả mọi website + Cloudflare DNS (1.1.1.1)
-├── 2_vietnam_all.cmd                   # Mở chặn danh sách web bị chặn ở VN (Steam, Media...)
-├── 3_steam_only.cmd                    # Chỉ mở chặn riêng Steam
+├── 1_all_websites.cmd                  # Hỗ trợ kết nối tất cả mọi website + Cloudflare DNS (1.1.1.1)
+├── 2_vietnam_all.cmd                   # Hỗ trợ danh sách web tại VN (Steam, Medium, BBC...)
+├── 3_steam_only.cmd                    # Chỉ hỗ trợ riêng cho ứng dụng Steam
 │
 ├── service_install_all_websites.cmd    # Cài Windows Service chạy ngầm (Tất cả web)
 ├── service_install_steam_only.cmd      # Cài Windows Service chạy ngầm (Chỉ Steam)
 ├── service_remove.cmd                  # Gỡ bỏ Windows Service và driver
 │
-├── vietnam-blacklist.txt               # Danh sách domain Steam, Media, Dev bị chặn ở VN
+├── vietnam-blacklist.txt               # Danh sách domain Steam, Media, Dev cần hỗ trợ kết nối
 ├── vietnam-steam.txt                   # Danh sách domain riêng cho Steam & Valve
 │
 ├── x86/                                # File thực thi cho Windows 32-bit (v0.2.3rc3)
@@ -70,13 +70,13 @@ GoodbyeDPI/
 
 ---
 
-## 🔍 Cách thêm tên miền mới bị chặn
+## 🔍 Cách thêm tên miền mới
 
-Nếu bạn phát hiện một website hoặc dịch vụ game nào khác bị nhà mạng chặn:
-1. Mở file [blacklist/vietnam-all.txt](blacklist/vietnam-all.txt) (hoặc file blacklist tương ứng).
-2. Thêm tên miền chính (root domain) vào cuối file (ví dụ: `example.com`).
+Nếu bạn muốn thêm website nào khác:
+1. Mở file [vietnam-blacklist.txt](vietnam-blacklist.txt) bằng Notepad.
+2. Thêm tên miền chính vào cuối file (ví dụ: `example.com`).
 3. Lưu file và khởi động lại script GoodbyeDPI.
-*(Cơ chế của GoodbyeDPI sẽ tự động khớp toàn bộ các subdomain con như `api.example.com`, `cdn.example.com`...)*
+*(Hệ thống sẽ tự động áp dụng cho toàn bộ các subdomain con như `api.example.com`, `cdn.example.com`...)*
 
 ---
 
@@ -99,8 +99,8 @@ Yêu cầu môi trường **GNU Make** và **MinGW-w64** cùng thư viện **Win
 ## 💖 Lời cảm ơn (Credits)
 
 - Dự án được phát triển dựa trên [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) của tác giả **@ValdikSS**.
-- Sử dụng driver bắt gói tin tầng mạng [WinDivert](https://github.com/basil00/Divert) của tác giả **@basil00**.
-- Cảm ơn cộng đồng người dùng Internet tại Việt Nam đã thử nghiệm và đóng góp danh sách tên miền bị chặn.
+- Sử dụng driver tầng mạng [WinDivert](https://github.com/basil00/Divert) của tác giả **@basil00**.
+- Cảm ơn cộng đồng người dùng Internet tại Việt Nam đã thử nghiệm và đóng góp danh sách tên miền.
 
 ---
 
