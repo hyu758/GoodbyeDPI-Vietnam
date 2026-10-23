@@ -6,7 +6,7 @@
 
 Công cụ tiện ích mã nguồn mở giúp hỗ trợ truy cập các trang web và dịch vụ trực tuyến bị hạn chế kết nối tại **Việt Nam**.
 
-Đặc biệt hỗ trợ truy cập mượt mà vào **Steam** (Cửa hàng Store, Cộng đồng Community, Tải game, Chat bạn bè) và các website công nghệ/tin tức quốc tế (**Medium, BBC, ArtStation...**) **mà không làm tăng Ping, không giảm tốc độ mạng, không cần cài đặt VPN.**
+Đặc biệt hỗ trợ truy cập mượt mà vào **Steam** **mà không làm tăng Ping, không giảm tốc độ mạng, không cần cài đặt VPN.**
 
 ---
 
