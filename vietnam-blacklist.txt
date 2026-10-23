@@ -1,6 +1,6 @@
-# Danh sach ten mien Steam & Valve bi chan tai Viet Nam
-# GoodbyeDPI tu dong kiem tra toan bo subdomain con
+# Danh sach cac website va dich vu bi chan tai Viet Nam (Steam, Valve, Media, Dev sites...)
 
+# Steam & Valve
 steampowered.com
 store.steampowered.com
 steamcommunity.com
@@ -22,3 +22,11 @@ playartifact.com
 dota2.com
 counter-strike.net
 tf2.com
+
+# Media, Dev & Community
+medium.com
+bbc.com
+bbc.co.uk
+artstation.com
+goodreads.com
+reddit.com

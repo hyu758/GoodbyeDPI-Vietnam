@@ -17,7 +17,7 @@ pause >nul
 
 sc stop "GoodbyeDPI" >nul 2>&1
 sc delete "GoodbyeDPI" >nul 2>&1
-sc create "GoodbyeDPI" binPath= "\"%CD%\%_arch%\goodbyedpi.exe\" -9 --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53 --blacklist \"%CD%\blacklist\vietnam-steam.txt\"" start= "auto"
+sc create "GoodbyeDPI" binPath= "\"%CD%\%_arch%\goodbyedpi.exe\" -9 --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53 --blacklist \"%CD%\vietnam-steam.txt\"" start= "auto"
 sc description "GoodbyeDPI" "GoodbyeDPI Vietnam Edition - Tu dong vuot DPI va unblock Steam"
 sc start "GoodbyeDPI"
 
