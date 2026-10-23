@@ -1,0 +1,24 @@
+# Danh sach ten mien Steam & Valve bi chan tai Viet Nam
+# GoodbyeDPI tu dong kiem tra toan bo subdomain con
+
+steampowered.com
+store.steampowered.com
+steamcommunity.com
+steamstatic.com
+steamcontent.com
+steamserver.net
+steam-chat.com
+steamgames.com
+valvesoftware.com
+steamuserimages-a.akamaihd.net
+steamcdn-a.akamaihd.net
+login.steampowered.com
+help.steampowered.com
+api.steampowered.com
+checkout.steampowered.com
+steamstat.us
+underlords.com
+playartifact.com
+dota2.com
+counter-strike.net
+tf2.com

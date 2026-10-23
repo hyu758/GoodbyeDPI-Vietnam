@@ -1,0 +1,32 @@
+# Tong hop toan bo danh sach website bi chan tai Viet Nam (Steam, Media, Dev sites...)
+
+# Steam & Valve
+steampowered.com
+store.steampowered.com
+steamcommunity.com
+steamstatic.com
+steamcontent.com
+steamserver.net
+steam-chat.com
+steamgames.com
+valvesoftware.com
+steamuserimages-a.akamaihd.net
+steamcdn-a.akamaihd.net
+login.steampowered.com
+help.steampowered.com
+api.steampowered.com
+checkout.steampowered.com
+steamstat.us
+underlords.com
+playartifact.com
+dota2.com
+counter-strike.net
+tf2.com
+
+# Dev, Media & Community
+medium.com
+bbc.com
+bbc.co.uk
+artstation.com
+goodreads.com
+reddit.com
